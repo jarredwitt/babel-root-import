@@ -34,10 +34,12 @@ export const transformRelativeToRootPath = (importPath, rootPathSuffix, rootPath
 
     // if the path is an absolute path (webpack sends '/Users/foo/bar/baz.js' here)
     if ((sourcePath.indexOf('/') === 0)||(sourcePath.indexOf(':/') === 1)||(sourcePath.indexOf(':\\') === 1)) {
-      sourcePath = sourcePath.substring(root.length + 1);
+      // sourcePath = sourcePath.substring(root.length + 1);
     }
 
-    let relativePath = slash(path.relative(`/${sourcePath}`, absolutePath));
+    let projectRoot = path.resolve(__dirname).split('node_modules');
+    let cleanImportPath = path.join(projectRoot[0], importPath.replace.indexOf('~', ''));
+    let relativePath = slash(path.relative(`/${sourcePath}`, cleanImportPath));
 
     // if file is located in the same folder
     if (relativePath.indexOf('../') !== 0) {
