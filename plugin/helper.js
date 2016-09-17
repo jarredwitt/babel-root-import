@@ -38,7 +38,7 @@ export const transformRelativeToRootPath = (importPath, rootPathSuffix, rootPath
     }
 
     let projectRoot = path.resolve(__dirname).split('node_modules');
-    let cleanImportPath = path.join(projectRoot[0], importPath.replace.indexOf('~', ''));
+    let cleanImportPath = path.join(projectRoot[0], importPath.replace('~', ''));
     let relativePath = slash(path.relative(`/${sourcePath}`, cleanImportPath));
 
     // if file is located in the same folder
