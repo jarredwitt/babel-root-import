@@ -7,7 +7,8 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "build"
+    "build",
+    "plugin"
   ],
   "repository": "michaelzoidl/babel-root-import",
   "scripts": {
