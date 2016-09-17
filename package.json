@@ -10,7 +10,7 @@
     "build",
     "plugin"
   ],
-  "repository": "michaelzoidl/babel-root-import",
+  "repository": "jarredwitt/babel-root-import",
   "scripts": {
     "test": "mocha test/*.spec.js --require config/mocha.js --compilers js:babel-core/register",
     "test-watch": "mocha test/*.spec.js --require config/mocha.js --compilers js:babel-core/register --watch",
